@@ -34,4 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     });
+
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const headerNav = document.querySelector('.header-nav');
+    
+    if (menuToggle && headerNav) {
+        menuToggle.addEventListener('click', () => {
+            headerNav.classList.toggle('nav-open');
+        });
+
+        // Close menu when clicking a link
+        const navLinks = headerNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                headerNav.classList.remove('nav-open');
+            });
+        });
+    }
 });
